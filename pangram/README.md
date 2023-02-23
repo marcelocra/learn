@@ -1,34 +1,19 @@
-# Pangram
+# Exercism Command-line Interface (CLI)
 
-Welcome to Pangram on Exercism's F# Track.
-If you need help running the tests or submitting your code, check out `HELP.md`.
+[![CI](https://github.com/exercism/cli/actions/workflows/ci.yml/badge.svg)](https://github.com/exercism/cli/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/exercism/cli)](https://goreportcard.com/report/github.com/exercism/cli)
 
-## Instructions
+The CLI is the link between the [Exercism][exercism] website and your local work environment. It lets you download exercises and submit your solution to the site.
 
-Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan gramma,
-"every letter") is a sentence using every letter of the alphabet at least once.
-The best known English pangram is:
-> The quick brown fox jumps over the lazy dog.
+This CLI ships as a binary with no additional runtime requirements.
 
-The alphabet used consists of letters `a` to `z`, inclusive, and is case
-insensitive.
+## Installing the CLI
 
-## Source
+Instructions can be found at [exercism/cli/releases](https://github.com/exercism/cli/releases)
 
-### Created by
+## Contributing
 
-- @ErikSchierboom
+If you wish to help improve the CLI, please see the [Contributing guide][contributing].
 
-### Contributed to by
-
-- @istepura
-- @jrr
-- @lestephane
-- @robkeim
-- @valentin-p
-- @vrnithinkumar
-- @wolf99
-
-### Based on
-
-Wikipedia - https://en.wikipedia.org/wiki/Pangram
+[exercism]: http://exercism.io
+[contributing]: /CONTRIBUTING.md
