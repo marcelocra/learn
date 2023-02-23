@@ -13,6 +13,7 @@ Exercises:
 - [x] Two Fer
 - [x] Bob
 - [x] Pangram
+- [x] Isogram
 
 ## [common lisp track](https://exercism.org/tracks/common-lisp)
 
