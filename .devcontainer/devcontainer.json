@@ -1,0 +1,17 @@
+{
+  "name": "Existing Dockerfile",
+  "context": "..",
+  "dockerFile": "../Dockerfile",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "Ionide.Ionide-fsharp",
+        "Ionide.Ionide-FAKE",
+        "Ionide.Ionide-Paket"
+      ]
+    }
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/personal/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/workspaces/personal/${localWorkspaceFolderBasename}"
+}
