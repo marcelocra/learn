@@ -7,6 +7,10 @@ Take a look in the `fsharp` folder.
 Exercises:
 
 - [x] Hello, World!
+- [x] Lucian's Luscious Lasagna
+- [x] Annalyn's Infiltration
+- [x] Cars, Assemble!
+- [x] Two Fer
 - [x] Bob
 - [x] Pangram
 
