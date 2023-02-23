@@ -1,0 +1,5 @@
+{
+  "FSharp.dotnetRoot": "/root/dotnet7",
+  "omnisharp.dotnetPath": "/root/dotnet7",
+  "omnisharp.useModernNet": true
+}
