@@ -1,0 +1,14 @@
+0171f2721bf5a9ebc2aebe92725338171d832ecd31ec390159781ccb7e904f0a  exercism-3.1.0-linux-armv6.tar.gz
+22d176edd37cc02ba93a8d287480763f2a0d83d15d8782a621f80bedc7aa4d0c  exercism-3.1.0-openbsd-i386.tar.gz
+4736a14b0d5d98f6f33054db88133f77863de028b5e3a196c4bc641cdc51b71a  exercism-3.1.0-windows-armv5.zip
+4ada3a92e9ec8f2c07553973dc5b4bc62ad98a0368b6f6e12d66fa1a01ae5e24  exercism-3.1.0-openbsd-x86_64.tar.gz
+4e64b920964edf005e6c91c86213e1bb324fdc186714638b4d1e68736245a241  exercism-3.1.0-darwin-x86_64.tar.gz
+7b1fe982eb076d1e8dcac1471d40008a6cc091c89e7db37e1d049891e078cae5  exercism-3.1.0-linux-ppc64.tar.gz
+865c63c6d4b85a19ee290925ea679b22ecf7ae02c397d1c609287a9d1f37cc8a  exercism-3.1.0-windows-i386.zip
+8ffd990b150f729ed042ec928aaa1d74c76b4cd1198f8c83f47ea7acbcbb52b1  exercism-3.1.0-linux-armv5.tar.gz
+97ba90d7d83a9e8de57066be4d42319c33165a355c7072f535ba37c00aedf432  exercism-3.1.0-linux-x86_64.tar.gz
+d60eefc917d5d88c94896e26aaa24a9891b11c2d24b99268d220ad1d3ecd0b19  exercism-3.1.0-freebsd-x86_64.tar.gz
+daa738366e8a5ea808913077ed51edda14b79eb4482c485e5dc3bf27997e676e  exercism-3.1.0-windows-x86_64.zip
+e47d26d4efe836043a2f4b436dbbd552962f23771bf7f741c85d57e77dc7af54  exercism-3.1.0-linux-i386.tar.gz
+e6213a3890ec11263e22ec26a5bcc7bfc2bc75c095b5147bbf0800a7f8133063  exercism-3.1.0-freebsd-i386.tar.gz
+f76ffdbcba7bbd50a623332f60bff884113cc393efa039f14706fe75483f2df0  exercism-3.1.0-windows-armv6.zip
