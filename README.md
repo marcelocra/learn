@@ -14,6 +14,7 @@ Exercises:
 - [x] Bob
 - [x] Pangram
 - [x] Isogram
+- [x] Run-Length Encoding
 
 ## [common lisp track](https://exercism.org/tracks/common-lisp)
 
