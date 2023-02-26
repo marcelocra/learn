@@ -2,10 +2,6 @@
 
 ## [fsharp track](https://exercism.org/tracks/fsharp)
 
-Take a look in the `fsharp` folder.
-
-Exercises:
-
 - [x] Hello, World!
 - [x] Lucian's Luscious Lasagna
 - [x] Annalyn's Infiltration
@@ -17,8 +13,6 @@ Exercises:
 - [x] Run-Length Encoding
 
 ## [common lisp track](https://exercism.org/tracks/common-lisp)
-
-Exercises:
 
 - [x] Hello, World!
 
