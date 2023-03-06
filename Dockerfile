@@ -36,3 +36,15 @@ ENV DOTNET_ROOT=$DOTNET_7_ROOT
 ENV PATH="$PATH:$DOTNET_ROOT"
 ENV DOTNET_CLI_TELEMETRY_OPTOUT=1
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+
+# ------------------------------------------------------------------------------
+# - vlang ----------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+ENV VLANG_DIR=$HOME/vlang
+ENV VLANG_BIN_DIR=$VLANG_DIR/v
+RUN apt-get install build-essential
+RUN mkdir -p $VLANG_DIR \
+  && cd $VLANG_DIR \
+  && wget https://github.com/vlang/v/releases/latest/download/v_linux.zip \
+  && unzip v_linux.zip
+RUN PATH="$PATH:$VLANG_BIN_DIR"
