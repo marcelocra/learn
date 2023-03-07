@@ -48,3 +48,10 @@ RUN mkdir -p $VLANG_DIR \
   && wget https://github.com/vlang/v/releases/latest/download/v_linux.zip \
   && unzip v_linux.zip
 RUN PATH="$PATH:$VLANG_BIN_DIR"
+
+# ------------------------------------------------------------------------------
+# - Go -------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+RUN wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz
+ENV PATH="$PATH:/usr/local/go/bin"
