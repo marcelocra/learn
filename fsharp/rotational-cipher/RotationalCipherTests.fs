@@ -6,28 +6,22 @@ open Xunit
 open RotationalCipher
 
 [<Fact>]
-let ``Rotate a by 0, same output as input`` () =
-    rotate 0 "a" |> should equal "a"
+let ``Rotate a by 0, same output as input`` () = rotate 0 "a" |> should equal "a"
 
 [<Fact(Skip = "Remove this Skip property to run this test")>]
-let ``Rotate a by 1`` () =
-    rotate 1 "a" |> should equal "b"
+let ``Rotate a by 1`` () = rotate 1 "a" |> should equal "b"
 
 [<Fact(Skip = "Remove this Skip property to run this test")>]
-let ``Rotate a by 26, same output as input`` () =
-    rotate 26 "a" |> should equal "a"
+let ``Rotate a by 26, same output as input`` () = rotate 26 "a" |> should equal "a"
 
 [<Fact(Skip = "Remove this Skip property to run this test")>]
-let ``Rotate m by 13`` () =
-    rotate 13 "m" |> should equal "z"
+let ``Rotate m by 13`` () = rotate 13 "m" |> should equal "z"
 
 [<Fact(Skip = "Remove this Skip property to run this test")>]
-let ``Rotate n by 13 with wrap around alphabet`` () =
-    rotate 13 "n" |> should equal "a"
+let ``Rotate n by 13 with wrap around alphabet`` () = rotate 13 "n" |> should equal "a"
 
 [<Fact(Skip = "Remove this Skip property to run this test")>]
-let ``Rotate capital letters`` () =
-    rotate 5 "OMG" |> should equal "TRL"
+let ``Rotate capital letters`` () = rotate 5 "OMG" |> should equal "TRL"
 
 [<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Rotate spaces`` () =
@@ -43,5 +37,5 @@ let ``Rotate punctuation`` () =
 
 [<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Rotate all letters`` () =
-    rotate 13 "The quick brown fox jumps over the lazy dog." |> should equal "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
-
+    rotate 13 "The quick brown fox jumps over the lazy dog."
+    |> should equal "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
