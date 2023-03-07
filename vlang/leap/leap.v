@@ -1,9 +1,5 @@
 module main
 
-fn is_evently_divisible(year int) bool {
-	return year % 4 == 0
-}
-
 // is_leap_year returns true if the given year is a leap year in the Gregorian calendar
 fn is_leap_year(year int) bool {
 	// Not evenly divisible by 4? Not leap.
