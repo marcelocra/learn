@@ -42,3 +42,9 @@ let plants (diagram: string) (student: string) =
     let index = students |> List.findIndex (fun x -> x = student)
 
     studentCups.[index]
+
+
+let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+let cups = diagram.Split [| '\n' |]
+let skip = (Seq.skip (3 * 2) >> Seq.take 2) cups.[0]
+let collect = Seq.collect (Seq.skip (3 * 2) >> Seq.take 2) cups
