@@ -40,14 +40,14 @@ ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 # ------------------------------------------------------------------------------
 # - vlang ----------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-ENV VLANG_DIR=$HOME/vlang
-ENV VLANG_BIN_DIR=$VLANG_DIR/v
-RUN apt-get install build-essential
-RUN mkdir -p $VLANG_DIR \
-  && cd $VLANG_DIR \
-  && wget https://github.com/vlang/v/releases/latest/download/v_linux.zip \
-  && unzip v_linux.zip
-RUN PATH="$PATH:$VLANG_BIN_DIR"
+# ENV VLANG_DIR=$HOME/vlang
+# ENV VLANG_BIN_DIR=$VLANG_DIR/v
+# RUN apt-get install -y build-essential
+# RUN mkdir -p $VLANG_DIR \
+#   && cd $VLANG_DIR \
+#   && wget https://github.com/vlang/v/releases/latest/download/v_linux.zip \
+#   && unzip v_linux.zip
+# RUN PATH="$PATH:$VLANG_BIN_DIR"
 
 # ------------------------------------------------------------------------------
 # - Go -------------------------------------------------------------------------
@@ -60,9 +60,8 @@ ENV PATH="$PATH:/usr/local/go/bin"
 # - Dart -----------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 RUN apt-get update
-RUN apt-get install -y apt-transport-https
+RUN apt-get install -y apt-transport-https gnupg
 RUN wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/dart.gpg
 RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | tee /etc/apt/sources.list.d/dart_stable.list
 RUN apt-get update
 RUN apt-get install -y dart
-
