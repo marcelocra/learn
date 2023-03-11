@@ -75,3 +75,9 @@ RUN tar -xf /workspaces/personal/exercism/exercism-stuff/exercism-3.1.0-linux-x8
   && mkdir ~/bin \
   && mv exercism ~/bin
 ENV PATH="$PATH:$HOME/bin"
+
+# Common Lisp
+RUN apt-get install -y sbcl
+RUN curl -O https://beta.quicklisp.org/quicklisp.lisp \
+  && curl -O https://beta.quicklisp.org/quicklisp.lisp.asc \
+  && gpg --verify quicklisp.lisp.asc quicklisp.lisp
