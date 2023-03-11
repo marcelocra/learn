@@ -1,24 +1,22 @@
-# Ignore exercism folder.
-**/**/.exercism/**/* linguist-vendored
+# Ignore individual files.
+Dockerfile linguist-vendored
 
-# Ignore tools folder.
-tools/ linguist-vendored
+# Ignore exercism folders.
+tracks/**/**/.exercism/** linguist-vendored
 
-# Common Lisp.
-tracks/common-lisp/**/*test.lisp linguist-vendored
+# Ignore tools folder, where we have some binaries, zips, etc.
+tools/** linguist-vendored
 
-# Dart.
-tracks/dart/**/test/ linguist-vendored
-tracks/dart/**/lib/*_test.dart linguist-vendored
+# Ignore all test code.
 
-# F#.
-tracks/fsharp/**/*Tests.fs linguist-vendored
+### Files.
+tracks/**/**/*test.* linguist-vendored
+tracks/**/**/*tests.* linguist-vendored
+tracks/**/**/*Tests.* linguist-vendored
 
-# Go.
-tracks/go/**/*_test.go linguist-vendored
+### Folders.
+tracks/**/**/test/** linguist-vendored
+tracks/**/**/tests/** linguist-vendored
 
-# Rust.
-tracks/rust/**/tests/ linguist-vendored
-
-# V.
-tracks/vlang/**/*_test.v linguist-vendored
+### Specific.
+tracks/**/**/**/*_test.* linguist-vendored
