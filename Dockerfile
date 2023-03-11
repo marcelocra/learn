@@ -65,3 +65,13 @@ RUN wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dear
 RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | tee /etc/apt/sources.list.d/dart_stable.list
 RUN apt-get update
 RUN apt-get install -y dart
+
+# TODO(@marcelocra): move above, near other wget commands.
+RUN wget https://raw.githubusercontent.com/marcelocra/dev/main/config-files/init_shell.sh -P ~
+RUN echo 'source ~/init_shell.sh' >> ${shell_rc}
+
+# Exercism.
+RUN tar -xf /workspaces/personal/exercism/exercism-stuff/exercism-3.1.0-linux-x86_64.tar.gz \
+  && mkdir ~/bin \
+  && mv exercism ~/bin
+ENV PATH="$PATH:$HOME/bin"
