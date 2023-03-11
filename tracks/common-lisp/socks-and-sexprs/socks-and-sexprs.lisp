@@ -8,14 +8,12 @@
 ;; Evaluates to some symbol (not a keyword)
 (defun lennys-favorite-food ()
   ;; put your symbol here
-  'tomato
-  )
+  'tomato)
 
 ;; Evaluates to some keyword
 (defun lennys-secret-keyword ()
   ;; put your keyword here
-  :pizza-is-amazing
-  )
+  :pizza-is-amazing)
 
 ;; Evaluates to T if THING is an atom, NIL otherwise
 (defun is-an-atom-p (thing)
@@ -30,11 +28,9 @@
 ;; Evaluates to the first part of CONS
 (defun first-thing (cons)
   ;; put the code to get the first part of CONS here
-  (car cons)
-  )
+  (car cons))
 
 ;; Evaluates to the 'rest' of the CONS
 (defun rest-of-it (cons)
   ;; put the code to get the rest of CONS here
-  (cdr cons)
-  )
+  (cdr cons))
