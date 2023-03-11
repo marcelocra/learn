@@ -1,0 +1,24 @@
+# Ignore exercism folder.
+**/**/.exercism/**/* linguist-vendored
+
+# Ignore tools folder.
+tools/ linguist-vendored
+
+# Common Lisp.
+tracks/common-lisp/**/*test.lisp linguist-vendored
+
+# Dart.
+tracks/dart/**/test/ linguist-vendored
+tracks/dart/**/lib/*_test.dart linguist-vendored
+
+# F#.
+tracks/fsharp/**/*Tests.fs linguist-vendored
+
+# Go.
+tracks/go/**/*_test.go linguist-vendored
+
+# Rust.
+tracks/rust/**/tests/ linguist-vendored
+
+# V.
+tracks/vlang/**/*_test.v linguist-vendored
