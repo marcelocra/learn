@@ -1,6 +1,7 @@
-# exercism
+# Learn
 
-Check each folder's content to see which exercises are solved here.
+I use this repo to learn stuff. There're many solutions to exercises in the folders,
+take a look if you are curious or want to learn something different.
 
 ## IMPORTANT
 
