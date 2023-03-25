@@ -8,10 +8,12 @@
         "ms-dotnettools.csharp",
         "Ionide.Ionide-fsharp",
         "Ionide.Ionide-FAKE",
-        "Ionide.Ionide-Paket"
+        "Ionide.Ionide-Paket",
+        "Dart-Code.dart-code",
+        "Dart-Code.flutter",
+        "GitHub.copilot",
+        "golang.go"
       ]
     }
-  },
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/personal/${localWorkspaceFolderBasename},type=bind",
-  "workspaceFolder": "/workspaces/personal/${localWorkspaceFolderBasename}"
+  }
 }

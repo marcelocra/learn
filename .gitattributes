@@ -1,22 +1,22 @@
 # Ignore individual files.
 Dockerfile linguist-vendored
 
-# Ignore exercism folders.
-tracks/**/**/.exercism/** linguist-vendored
-
 # Ignore tools folder, where we have some binaries, zips, etc.
 tools/** linguist-vendored
 
-# Ignore all test code.
+# Ignore exercism folders
+# -----------------------
 
-### Files.
-tracks/**/**/*test.* linguist-vendored
-tracks/**/**/*tests.* linguist-vendored
-tracks/**/**/*Tests.* linguist-vendored
+# Ignore their hidden folder.
+exercism/tracks/**/**/.exercism/** linguist-vendored
 
-### Folders.
-tracks/**/**/test/** linguist-vendored
-tracks/**/**/tests/** linguist-vendored
-
-### Specific.
-tracks/**/**/**/*_test.* linguist-vendored
+# Ignore their test code (I didn't write them).
+# Files.
+exercism/tracks/**/**/*test.* linguist-vendored
+exercism/tracks/**/**/*tests.* linguist-vendored
+exercism/tracks/**/**/*Tests.* linguist-vendored
+# Folders.
+exercism/tracks/**/**/test/** linguist-vendored
+exercism/tracks/**/**/tests/** linguist-vendored
+# Specific.
+exercism/tracks/**/**/**/*_test.* linguist-vendored
