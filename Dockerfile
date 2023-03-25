@@ -88,10 +88,6 @@ RUN echo 'source ~/init_shell.sh' >> ${shell_rc}
 # - Nodejs ---------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 # RUN curl -fsSL https://fnm.vercel.app/install | bash
-# RUN fnm completions --shell bash
-# 
-
-# ------------------------------------------------------------------------------
-# - PureScript -----------------------------------------------------------------
-# ------------------------------------------------------------------------------
-# RUN curl -fsSL https://fnm.vercel.app/install | bash
+# # Figure out how to make this command work.
+# # RUN fnm completions --shell bash
+# RUN fnm install 18.12.1
