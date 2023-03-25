@@ -83,3 +83,15 @@ RUN echo 'source ~/init_shell.sh' >> ${shell_rc}
 # RUN curl -O https://beta.quicklisp.org/quicklisp.lisp \
 #   && curl -O https://beta.quicklisp.org/quicklisp.lisp.asc \
 #   && gpg --verify quicklisp.lisp.asc quicklisp.lisp
+
+# ------------------------------------------------------------------------------
+# - Nodejs ---------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# RUN curl -fsSL https://fnm.vercel.app/install | bash
+# RUN fnm completions --shell bash
+# 
+
+# ------------------------------------------------------------------------------
+# - PureScript -----------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# RUN curl -fsSL https://fnm.vercel.app/install | bash
