@@ -1,20 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:args/args.dart';
-
-const lineNumber = 'line-number';
-
-void main(List<String> arguments) {
-  exitCode = 0; //presume success
-  final parser = ArgParser()
-    ..addFlag(lineNumber,
-        abbr: 'n', negatable: false, help: 'Show line numbers');
-
-  final results = parser.parse(arguments);
-  final paths = results.rest;
-
-  dcat(paths, showLineNumbers: results[lineNumber] as bool);
-}
 
 Future<void> dcat(List<String> paths, {bool showLineNumbers = false}) async {
   if (paths.isEmpty) {
