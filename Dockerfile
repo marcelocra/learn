@@ -54,27 +54,31 @@ RUN echo 'source ~/init_shell.sh' >> ${shell_rc}
 # ------------------------------------------------------------------------------
 # - Go -------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-# RUN wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
-# RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz
-# ENV PATH="$PATH:/usr/local/go/bin"
+RUN wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz
+ENV PATH="$PATH:/usr/local/go/bin"
 
 # ------------------------------------------------------------------------------
 # - Dart -----------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-# RUN apt-get update
-# RUN apt-get install -y apt-transport-https gnupg
-# RUN wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/dart.gpg
-# RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | tee /etc/apt/sources.list.d/dart_stable.list
-# RUN apt-get update
-# RUN apt-get install -y dart
+RUN apt-get update
+RUN apt-get install -y apt-transport-https gnupg
+RUN wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/dart.gpg
+RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | tee /etc/apt/sources.list.d/dart_stable.list
+RUN apt-get update
+RUN apt-get install -y dart
+ENV PATH="$PATH:/usr/lib/dart/bin"
+
 
 # ------------------------------------------------------------------------------
 # - Exercism -------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-# RUN tar -xf /workspaces/personal/exercism/exercism-stuff/exercism-3.1.0-linux-x86_64.tar.gz \
-#   && mkdir ~/bin \
-#   && mv exercism ~/bin
-# ENV PATH="$PATH:$HOME/bin"
+COPY ./tools/exercism-3.1.0-linux-x86_64.tar.gz .
+RUN tar -xf ./exercism-3.1.0-linux-x86_64.tar.gz \
+  && mkdir ~/bin \
+  && mv exercism ~/bin
+RUN rm ./exercism-3.1.0-linux-x86_64.tar.gz
+ENV PATH="$PATH:$HOME/bin"
 
 # ------------------------------------------------------------------------------
 # - Common Lisp ----------------------------------------------------------------
@@ -87,7 +91,7 @@ RUN echo 'source ~/init_shell.sh' >> ${shell_rc}
 # ------------------------------------------------------------------------------
 # - Nodejs ---------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-# RUN curl -fsSL https://fnm.vercel.app/install | bash
-# # Figure out how to make this command work.
-# # RUN fnm completions --shell bash
+RUN curl -fsSL https://fnm.vercel.app/install | bash
+# Figure out how to make commands below work.
+# RUN fnm completions --shell bash
 # RUN fnm install 18.12.1
