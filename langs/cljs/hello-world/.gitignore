@@ -1,3 +1,4 @@
+# CLJS .gitignore
 *~
 .idea
 /.DS_Store
@@ -37,3 +38,24 @@ package-lock.json
 resources/brepl_client.js
 .calva
 
+# Shadow CLJS .gitignore
+node_modules/
+public/js
+
+/target
+/checkouts
+/src/gen
+
+pom.xml
+pom.xml.asc
+*.iml
+*.jar
+*.log
+.shadow-cljs
+.idea
+.lein-*
+.nrepl-*
+.DS_Store
+
+.hgignore
+.hg/
