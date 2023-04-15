@@ -1,0 +1,19 @@
+{
+  "image": "marcelocra/dev-container:2023.04.15",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "betterthantomorrow.calva-spritz",
+        "betterthantomorrow.calva",
+        "GitHub.copilot",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "ms-dotnettools.csharp",
+        "Dart-Code.dart-code",
+        "Ionide.Ionide-fsharp",
+        "Ionide.Ionide-FAKE",
+        "Ionide.Ionide-Paket"
+      ]
+    }
+  }
+}
