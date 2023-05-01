@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1
-FROM ubuntu:22.04
+FROM node:18.12.1
+# FROM ubuntu:22.04
 
 ENV HOME="/root"
 
@@ -10,7 +11,8 @@ RUN echo 'PS1="\$(printf \"=%.0s\" \$(seq 1 \${COLUMNS}))\n[\$(TZ=\"America/Sao_
 
 # Update and install essentials.
 RUN apt-get update
-RUN apt-get install -y wget git tmux ripgrep curl unzip neovim less
+RUN apt-get install -y wget
+# RUN apt-get install -y wget git tmux ripgrep curl unzip neovim less
 
 # Download my helpers.
 RUN wget https://raw.githubusercontent.com/marcelocra/dev/main/config-files/.tmux.conf -P ~
@@ -54,34 +56,34 @@ RUN echo 'source ~/init_shell.sh' >> ${shell_rc}
 # ------------------------------------------------------------------------------
 # - Go -------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-RUN wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
-RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz
-ENV PATH="$PATH:/usr/local/go/bin"
+# RUN wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz
+# RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz
+# ENV PATH="$PATH:/usr/local/go/bin"
 
 # ------------------------------------------------------------------------------
 # - Dart -----------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-RUN apt-get update
-RUN apt-get install --no-install-recommends -y -q gnupg2 curl git ca-certificates apt-transport-https openssh-client 
-RUN wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/dart.gpg 
-# Fix the following 
-RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list
-RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian testing main' | sudo tee /etc/apt/sources.list.d/dart_testing.list
-RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian unstable main' | sudo tee /etc/apt/sources.list.d/dart_unstable.list
-RUN apt-get update
-# 'unstable' for dev, 'testing' for beta, 'stable' for stable, remove the '-t' for latest.
-RUN apt-get -t testing install -y dart
-ENV PATH="$PATH:/usr/lib/dart/bin"
+# RUN apt-get update
+# RUN apt-get install --no-install-recommends -y -q gnupg2 curl git ca-certificates apt-transport-https openssh-client 
+# RUN wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/dart.gpg 
+# # Fix the following 
+# RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list
+# RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian testing main' | sudo tee /etc/apt/sources.list.d/dart_testing.list
+# RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian unstable main' | sudo tee /etc/apt/sources.list.d/dart_unstable.list
+# RUN apt-get update
+# # 'unstable' for dev, 'testing' for beta, 'stable' for stable, remove the '-t' for latest.
+# RUN apt-get -t testing install -y dart
+# ENV PATH="$PATH:/usr/lib/dart/bin"
 
 # ------------------------------------------------------------------------------
 # - Exercism -------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-COPY ./tools/exercism-3.1.0-linux-x86_64.tar.gz .
-RUN tar -xf ./exercism-3.1.0-linux-x86_64.tar.gz \
-  && mkdir ~/bin \
-  && mv exercism ~/bin
-RUN rm ./exercism-3.1.0-linux-x86_64.tar.gz
-ENV PATH="$PATH:$HOME/bin"
+# COPY ./tools/exercism-3.1.0-linux-x86_64.tar.gz .
+# RUN tar -xf ./exercism-3.1.0-linux-x86_64.tar.gz \
+#   && mkdir ~/bin \
+#   && mv exercism ~/bin
+# RUN rm ./exercism-3.1.0-linux-x86_64.tar.gz
+# ENV PATH="$PATH:$HOME/bin"
 
 # ------------------------------------------------------------------------------
 # - Common Lisp ----------------------------------------------------------------
@@ -94,7 +96,7 @@ ENV PATH="$PATH:$HOME/bin"
 # ------------------------------------------------------------------------------
 # - Nodejs ---------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-RUN curl -fsSL https://fnm.vercel.app/install | bash
+# RUN curl -fsSL https://fnm.vercel.app/install | bash
 # Figure out how to make commands below work.
 # RUN fnm completions --shell bash
 # RUN fnm install 18.12.1
