@@ -477,3 +477,5 @@ $RECYCLE.BIN/
 *.lnk
 
 .pnpm-store/
+projects/interactive/.cpcache
+langs/elm/hello-elm/elm-stuff
