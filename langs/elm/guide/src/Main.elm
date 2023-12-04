@@ -25,7 +25,14 @@ update msg model =
 
 
 view model =
-    div [ style "background-color" "red" ]
+    div
+        [ style "background-color" "blue"
+        , style "border-radius" "4px"
+        , style "border" "1px solid gray"
+        , style "padding" "10px"
+        , style "margin" "10px"
+        , style "flex" "flex-col"
+        ]
         [ button [ onClick Decrement ] [ text "-" ]
         , div [] [ text (String.fromInt model) ]
         , button [ onClick Increment ] [ text "+" ]
