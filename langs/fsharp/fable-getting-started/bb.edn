@@ -34,13 +34,21 @@
   :enter (logging "starting")
   :leave (logging "done!")
 
-  backend-dev {:doc "Commands to run during development of the backend."
-               :task (run '-backend-dev {:parallel true})}
+  -dev-fsharp-build-watch {:task (shell "dotnet fable watch")}
 
-  -backend-dev {:depends [-backend-dev-fsharp-build-watch -backend-dev-bun-build-watch -backend-dev-bun-run-watch]}
-  -backend-dev-fsharp-build-watch {:task (shell "dotnet fable watch")}
+  fe-dev {:doc "Commands to run during development of the frontend"
+          :task (run '-frontend-dev {:parallel true})}
+
+  -frontend-dev {:depends [-dev-fsharp-build-watch -frontend-dev-vite-watch]}
+  -frontend-dev-vite-watch {:task (shell "bunx vite")}
+
+  be-dev {:doc "Commands to run during development of the backend."
+          :task (run '-backend-dev {:parallel true})}
+
+  -backend-dev {:depends [-dev-fsharp-build-watch -backend-dev-bun-build-watch -backend-dev-bun-run-watch]}
   -backend-dev-bun-build-watch {:task (shell "bun build ./Backend.fs.js --target=node --outfile backend.js --sourcemap=inline --watch")}
   -backend-dev-bun-run-watch {:task (shell "bun --watch backend.js")}
+
 
   ;; Next task above this line.
   }
