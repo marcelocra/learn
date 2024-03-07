@@ -1,0 +1,49 @@
+{:min-bb-version "1.3.188"
+
+ :tasks
+ {:requires ([babashka.fs :as fs]
+             [babashka.cli :as cli])
+  :init (do
+          (def cli-options
+            {:hello {:default "hello, world!"}})
+          (def parsed-cli-args (cli/parse-opts *command-line-args* {:spec cli-options}))
+
+          (defn now
+            "Creates a date and time string for the current moment."
+            [& {:keys [format-str]}]
+            (let [date (java.util.Date.)]
+              (-> (java.text.SimpleDateFormat. (if (nil? format-str)
+                                                 "yyyy-MM-dd HH:mm:ss.SSS"
+                                                 format-str))
+                  (.format date))))
+
+          (defn logging
+            "Logs timestamp with task name."
+            [text-to-log]
+            (let [log (Object.)
+                  current-task-name (:name (current-task))]
+              (locking log
+                (println
+                 (format
+                  "[ %s | %s ] %s"
+                  (now)
+                  (if (nil? current-task-name) "global" current-task-name)
+                  text-to-log)))))
+
+          (logging parsed-cli-args))
+  :enter (logging "starting")
+  :leave (logging "done!")
+
+  backend-dev {:doc "Commands to run during development of the backend."
+               :task (run '-backend-dev {:parallel true})}
+
+  -backend-dev {:depends [-backend-dev-fsharp-build-watch -backend-dev-bun-build-watch -backend-dev-bun-run-watch]}
+  -backend-dev-fsharp-build-watch {:task (shell "dotnet fable watch")}
+  -backend-dev-bun-build-watch {:task (shell "bun build ./Backend.fs.js --target=node --outfile backend.js --sourcemap=inline --watch")}
+  -backend-dev-bun-run-watch {:task (shell "bun --watch backend.js")}
+
+  ;; Next task above this line.
+  }
+
+ ;; Next bb setting above this line.
+ }

@@ -4,3 +4,5 @@ export function hello(a, b) {
     toConsole(printf("hello, %s, %s"))(a)(b);
 }
 
+hello("mister", "interesting a lot now");
+
