@@ -36,6 +36,9 @@
 
   -dev-fsharp-build-watch {:task (shell "dotnet fable watch")}
 
+  fe {:doc "Simpler version of fe-dev."
+      :task (shell "dotnet fable watch --run bunx vite")}
+
   fe-dev {:doc "Commands to run during development of the frontend"
           :task (run '-frontend-dev {:parallel true})}
 

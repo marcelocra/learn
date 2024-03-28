@@ -1,6 +1,6 @@
 import { printf, toConsole } from "./fable_modules/fable-library-js.4.14.0/String.js";
 
-export const str = "Hello, world!";
+export const str = "Hello, world! hello people";
 
 toConsole(printf("%s"))(str);
 
