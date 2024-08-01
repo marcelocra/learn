@@ -1,0 +1,43 @@
+= example(1)
+Doc Writer <doc.writer@example.com>
+:doctype: manpage
+:release-version: 0.1.0
+:man manual: bin manual
+:man source: bin {release-version}
+:icons: font
+
+== Name
+
+example - a binary that do stuff
+
+== Synopsis
+
+*example* [_OPTION_]... _FILE_...
+
+== Description
+
+_Zen_ in the *art* of writing `plain text` with https://asciidoc.org[AsciiDoc].
+
+// tag::options[]
+=== Settings
+
+*-B, --base-dir*=_DIR_::
+  Something goes here, like a very long text, perhaps.
+  Then something else goes here.
+  Yet something else entirely.
+
+=== More settings
+
+Use https://asciidoctor.org[AsciiDoctor] for the best AsciiDoc experience.footnote:[Not to mention
+the best looking output!] Then icon:twitter[role=aqua] about it!
+
+== Sample Section
+
+[square]
+* item 1
+* item 2
+
+[source,ruby]
+----
+puts "Hello, World!"
+----
